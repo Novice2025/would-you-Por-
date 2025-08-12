@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Would you...</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'mc-red': '#E41F28',
+              'mc-yellow': '#FFC72C',
+              'bk-orange': '#FF7A00', // A cor para o highlight do Burger King
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+      
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      /* Animação para o efeito de destaque do Burger King */
+      @keyframes highlight {
+          0% { box-shadow: 0 0 0px rgba(255, 122, 0, 0.4); transform: scale(1); }
+          50% { box-shadow: 0 0 15px rgba(255, 122, 0, 0.8); transform: scale(1.05); }
+          100% { box-shadow: 0 0 0px rgba(255, 122, 0, 0.4); transform: scale(1); }
+      }
+
+      /* Animação para a caixa de exemplo */
+      @keyframes pulse-shadow {
+          0% { box-shadow: 0 0 0 rgba(255, 122, 0, 0.7); }
+          70% { box-shadow: 0 0 10px 10px rgba(255, 122, 0, 0); }
+          100% { box-shadow: 0 0 0 rgba(255, 122, 0, 0); }
+      }
+
+      .animated-box {
+          animation: pulse-shadow 2s infinite;
+      }
+
+      /* Estilo para os cards, com transição suave */
+      .card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      /* Efeito de hover */
+      .card:hover {
+          z-index: 10;
+          animation: highlight 1s infinite;
+      }
+
+      .quiz-card {
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      .quiz-card:hover {
+        transform: translateY(-3px);
+      }
+    </style>
+</head>
+<body class="bg-black text-white p-4 md:p-8">
+
+    <!-- Netflix-style Header with responsive 'Would you...' text -->
+    <header class="flex items-center justify-between mb-8 md:mb-12">
+        <div class="flex items-center">
+            <p class="text-mc-yellow text-4xl md:text-6xl font-black tracking-widest leading-none">Would you...</p>
+        </div>
+        <!-- Simulating a profile icon -->
+        <div class="h-10 w-10 md:h-12 md:w-12 bg-gray-500 rounded-full cursor-pointer"></div>
+    </header>
+
+    <!-- Main Content Area with responsive grid -->
+    <main class="container mx-auto">
+        
+        <!-- A importância de 'Would you...' (movido para o topo) -->
+        <div class="p-6 rounded-lg bg-gray-900 mb-8">
+            <h3 class="text-mc-yellow text-2xl md:text-3xl font-black mb-4">A Importância de 'Would you...'</h3>
+            <p class="text-lg mb-4">
+                Como brasileiro, é fácil cair na armadilha de traduzir frases literalmente. Mas no inglês, pequenas escolhas de palavras como o uso de **"would you"** podem fazer toda a diferença no tom da sua conversa. Ele é a chave para ser mais educado, formal e respeitoso.
+            </p>
+
+            <h4 class="text-mc-yellow text-xl font-bold mt-8 mb-2">Pedidos e Ajuda: A Etiqueta do Inglês</h4>
+            <p class="text-lg mb-2">
+                No Brasil, é muito comum e aceitável dizer **"Você pode me ajudar?"** de forma direta. No inglês, essa mesma tradução com "Can you..." pode soar menos educada, pois foca na **habilidade** da pessoa, e não no pedido em si. É aqui que o "Would you..." e "Could you..." entram para suavizar o pedido.
+            </p>
+
+            <!-- Caixa animada adicionada aqui -->
+            <div class="animated-box p-4 rounded-lg text-center my-4 border-2 border-bk-orange">
+                <p class="text-bk-orange text-2xl md:text-3xl font-black">Would you <span class="text-white">(verb)</span> ...?</p>
+            </div>
+            
+            <ul class="list-disc list-inside ml-4 text-lg">
+                <li><strong class="text-mc-yellow">"Would you help me with this task?"</strong><br>
+                    Esta é uma ótima opção para nós, brasileiros. É direta, mas o "would" a torna educada. É a versão mais próxima do nosso "Você pode me ajudar?".</li>
+                <li><strong class="text-mc-yellow">"Would you mind helping me with this task?"</strong><br>
+                    Esta é a forma mais gentil e respeitosa. No português, usamos "você pode..." de forma mais direta. A tradução literal de "pode" para "can" pode soar rude, por isso o "mind" no inglês é a maneira mais cortês de pedir um favor, mostrando que você se importa com a disposição da outra pessoa.</li>
+                <li><strong class="text-mc-yellow">"Could you please close the door?"</strong><br>
+                    É o 'coringa' da educação, a forma mais comum e segura para a maioria dos pedidos. Embora a tradução direta seja "Você poderia, por favor...", é mais frequente ouvir "Você pode fechar a porta?" no dia a dia brasileiro, o que reforça a diferença de tom entre os idiomas.</li>
+                <li><strong class="text-gray-400">"Can you close the door?"</strong><br>
+                    Equivale ao nosso "Você pode fechar a porta?". É direto e informal, ideal apenas para amigos. **Evite esta opção em contextos profissionais ou com desconhecidos.**</li>
+            </ul>
+
+            <h4 class="text-mc-yellow text-xl font-bold mt-8 mb-2">Para Sugestões (Oferecer algo)</h4>
+            <p class="text-lg mb-2">
+                "Would you like..." é a forma padrão para fazer um convite ou oferecer algo.
+            </p>
+            <ul class="list-disc list-inside ml-4 text-lg">
+                <li><strong class="text-mc-yellow">"Would you like to have some coffee?"</strong> or <strong class="text-mc-yellow">"Would you have some coffee?"</strong> or <strong class="text-mc-yellow">"Would you like some coffee?"</strong><br>
+                    Esta é a maneira educada e formal de oferecer algo, ideal para quase todas as situações.</li>
+                <li><strong class="text-gray-400">"Do you want some coffee?"</strong> or <strong class="text-gray-400">"Would you fancy some coke?"</strong> or <strong class="text-gray-400">"Fancy some coke?"</strong> or <strong class="text-gray-400">"Some coke?"</strong><br>
+                    Mais informal e direto. Use com amigos próximos, pois em outros contextos pode soar um pouco abrupto. <br>
+                    *Observação:* a expressão **"fancy"** neste contexto significa "querer" ou "ter vontade de algo".</li>
+            </ul>
+
+            <p class="text-lg mt-8">
+                Em resumo, ao usar **"would you"**, você está mostrando que se importa com a pessoa com quem está falando, respeitando sua vontade e espaço. É um pequeno detalhe que faz toda a diferença na fluência e na etiqueta da língua inglesa.
+            </p>
+        </div>
+
+        <h2 class="text-white text-2xl md:text-3xl font-bold mb-6">30 Situações com Traduções</h2>
+        <div id="questions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mb-12">
+            <!-- Cards will be dynamically inserted here by JavaScript -->
+        </div>
+
+        <!-- Practice Section -->
+        <div class="p-6 rounded-lg bg-gray-900 mb-8">
+            <h2 class="text-mc-yellow text-2xl md:text-3xl font-black mb-4">Pratique sua tradução!</h2>
+            <p class="text-gray-300 mb-6">
+                Tente traduzir as frases em português para o inglês. Digite sua resposta e clique em "Verificar" para saber se acertou!
+            </p>
+            <div id="practice-questions">
+                <!-- Practice questions will be dynamically inserted here -->
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Array de objetos com as situações, traduções e explicações
+        const situationsData = [
+            {
+                english: "Would you like to have some coffee?",
+                portuguese: "Aceita um café? / Quer um café?",
+                explanation: "A forma mais educada e comum de oferecer uma bebida, demonstrando hospitalidade."
+            },
+            {
+                english: "Would you mind helping me with this task?",
+                portuguese: "Você se importaria de me ajudar? / Poderia me ajudar com essa tarefa? / Pode me ajudar com essa tarefa?",
+                explanation: "Um pedido de ajuda muito gentil, focado em não incomodar a outra pessoa."
+            },
+            {
+                english: "Would you prefer the window seat or the aisle seat?",
+                portuguese: "Você prefere a janela ou o corredor?",
+                explanation: "Usado para dar opções de escolha de forma educada, como em um avião ou restaurante."
+            },
+            {
+                english: "Would you like to join us for dinner tonight?",
+                portuguese: "Gostaria de jantar com a gente hoje à noite?",
+                explanation: "O convite perfeito para um evento social, seja um jantar ou um encontro."
+            },
+            {
+                english: "Would you be able to pick me up from the station?",
+                portuguese: "Você conseguiria me pegar na estação?",
+                explanation: "Uma forma gentil de perguntar se alguém tem disponibilidade para um favor, como uma carona."
+            },
+            {
+                english: "Would you mind if I open the window?",
+                portuguese: "Você se importaria se eu abrisse a janela?",
+                explanation: "A maneira mais educada de pedir permissão, mostrando respeito ao espaço da pessoa."
+            },
+            {
+                english: "Would you like to see the new movie with me?",
+                portuguese: "Você quer ver o filme novo comigo?",
+                explanation: "Um convite amigável e casual para ir ao cinema ou assistir algo junto."
+            },
+            {
+                english: "Would you rather work from home or at the office?",
+                portuguese: "Você prefere trabalhar de casa ou no escritório?",
+                explanation: "Ótimo para iniciar uma discussão sobre preferências pessoais, como no trabalho ou em casa."
+            },
+            {
+                english: "Would you be available for a meeting tomorrow at 2 PM?",
+                portuguese: "Você vai estar disponível para uma reunião amanhã às 14h? / Você estaria disponível para uma reunião amanhã às 14h?",
+                explanation: "Essencial em contextos profissionais para verificar a disponibilidade de alguém para uma reunião."
+            },
+            {
+                english: "Would you like to try the new restaurant?",
+                portuguese: "Quer experimentar o novo restaurante? / Gostaria de experimentar o novo restaurante?",
+                explanation: "Uma sugestão para sair e experimentar algo novo, como um restaurante."
+            },
+            {
+                english: "Would you mind sending me the report by Friday?",
+                portuguese: "Você se importaria de me enviar o relatório até sexta?",
+                explanation: "Uma forma educada de solicitar um prazo, focando na colaboração para a entrega de um trabalho."
+            },
+            {
+                english: "Would you prefer to pay with cash or card?",
+                portuguese: "Você prefere pagar com dinheiro ou cartão?",
+                explanation: "Utilizado em lojas e restaurantes para perguntar a preferência de pagamento de um cliente."
+            },
+            {
+                english: "Would you like me to get you something to drink?",
+                portuguese: "Gostaria que eu pegasse algo para você beber?",
+                explanation: "Uma oferta de serviço ou gentileza, mostrando que você está à disposição para ajudar."
+            },
+            {
+                english: "Would you be able to explain this concept to me?",
+                portuguese: "Você conseguiria me explicar esse conceito?",
+                explanation: "Um pedido de clareza e explicação sobre um assunto que você não domina."
+            },
+            {
+                english: "Would you mind turning down the music a little?",
+                portuguese: "Você se importaria de abaixar o volume da música?",
+                explanation: "Uma forma de pedir para que o volume seja ajustado sem soar rude."
+            },
+            {
+                english: "Would you like to go for a walk in the park?",
+                portuguese: "Você quer dar uma volta no parque?",
+                explanation: "Um convite para uma atividade relaxante, ideal para amigos ou um encontro romântico."
+            },
+            {
+                english: "Would you rather have a big party or a small gathering?",
+                portuguese: "Você prefere uma festa grande ou uma reunião pequena?",
+                explanation: "Ótimo para explorar preferências em eventos sociais, como festas de aniversário."
+            },
+            {
+                english: "Would you mind if I borrow your pen for a moment?",
+                portuguese: "Você se importaria se eu pegasse sua caneta emprestada por um momento?",
+                explanation: "O pedido de empréstimo mais educado e simples, para algo rápido e sem compromisso."
+            },
+            {
+                english: "Would you like to see a different option?",
+                portuguese: "Gostaria de ver uma opção diferente?",
+                explanation: "Usado para oferecer alternativas em uma situação de escolha, como em compras ou projetos."
+            },
+            {
+                english: "Would you be able to show me how to use this software?",
+                portuguese: "Você conseguiria me mostrar como usar este software?",
+                explanation: "Um pedido educado para aprender algo, como usar um programa de computador."
+            },
+            {
+                english: "Would you prefer to meet at my office or your office?",
+                portuguese: "Você prefere nos encontrarmos no meu escritório ou no seu?",
+                explanation: "Perguntando sobre a preferência de local para um encontro ou reunião de negócios."
+            },
+            {
+                english: "Would you mind closing the door on your way out?",
+                portuguese: "Você se importaria de fechar a porta ao sair?",
+                explanation: "Um pedido educado para que a pessoa feche a porta ao sair, sem ser grosseiro."
+            },
+            {
+                english: "Would you like to learn more about this topic?",
+                portuguese: "Gostaria de aprender mais sobre este tópico?",
+                explanation: "Uma pergunta para saber se a pessoa tem interesse em se aprofundar em um assunto."
+            },
+            {
+                english: "Would you be able to finish this by the end of the day?",
+                portuguese: "Você conseguiria terminar isso até o final do dia?",
+                explanation: "Verificando a possibilidade de alguém concluir uma tarefa dentro de um prazo."
+            },
+            {
+                english: "Would you rather watch a comedy or a thriller?",
+                portuguese: "Você prefere assistir uma comédia ou um filme de suspense?",
+                explanation: "Uma forma de perguntar a preferência para um momento de lazer, como ver um filme."
+            },
+            {
+                english: "Would you mind if I join you?",
+                portuguese: "Você se importaria se eu me juntasse a vocês?",
+                explanation: "Um convite educado para se juntar a um grupo, como em uma mesa de almoço."
+            },
+            {
+                english: "Would you like to have dessert?",
+                portuguese: "Gostaria de comer uma sobremesa?",
+                explanation: "Oferecendo uma sobremesa de forma cortês após uma refeição."
+            },
+            {
+                english: "Would you be able to recommend a good book?",
+                portuguese: "Você poderia me recomendar um bom livro?",
+                explanation: "Um pedido de indicação de forma educada, como um bom livro, filme, ou restaurante."
+            },
+            {
+                english: "Would you prefer to read a physical book or an e-book?",
+                portuguese: "Você prefere ler um livro físico ou um e-book?",
+                explanation: "Explorando a preferência de leitura de alguém, uma ótima forma de iniciar uma conversa."
+            },
+            {
+                english: "Would you mind giving me a moment to think?",
+                portuguese: "Você se importaria de me dar um momento para pensar? / Você pode me dar um momento para pensar?",
+                explanation: "Uma maneira gentil de pedir um tempo para pensar ou tomar uma decisão."
+            }
+        ];
+
+        const grid = document.getElementById('questions-grid');
+        const practiceContainer = document.getElementById('practice-questions');
+        const practiceData = [
+            { portuguese: "Você prefere trabalhar de casa ou no escritório?", english: "Would you rather work from home or at the office?" },
+            { portuguese: "Gostaria que eu pegasse algo para você beber?", english: "Would you like me to get you something to drink?" },
+            { portuguese: "Você conseguiria me explicar esse conceito?", english: "Would you be able to explain this concept to me?" },
+            { portuguese: "Você se importaria de abaixar o volume da música?", english: "Would you mind turning down the music a little?" },
+            { portuguese: "Você quer dar uma volta no parque?", english: "Would you like to go for a walk in the park?" },
+            { portuguese: "Você prefere uma festa grande ou uma reunião pequena?", english: "Would you rather have a big party or a small gathering?" },
+            { portuguese: "Gostaria de ver uma opção diferente?", english: "Would you like to see a different option?" },
+            { portuguese: "Você se importaria se eu me juntasse a vocês?", english: "Would you mind if I join you?" },
+            { portuguese: "Você se importaria de fechar a porta ao sair?", english: "Would you mind closing the door on your way out?" },
+            { portuguese: "Você prefere ler um livro físico ou um e-book?", english: "Would you prefer to read a physical book or an e-book?" }
+        ];
+
+        // Cria os cards dinamicamente com as explicações e traduções
+        situationsData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card bg-mc-red rounded-lg p-6 flex flex-col justify-between cursor-pointer';
+
+            const englishText = document.createElement('p');
+            englishText.className = 'text-white text-lg font-bold mb-1';
+            englishText.textContent = item.english;
+
+            const portugueseText = document.createElement('p');
+            portugueseText.className = 'text-mc-yellow text-base font-semibold italic mb-2';
+            portugueseText.textContent = `(${item.portuguese})`;
+
+            const explanationText = document.createElement('p');
+            explanationText.className = 'text-gray-200 text-sm';
+            explanationText.textContent = item.explanation;
+            
+            card.appendChild(englishText);
+            card.appendChild(portugueseText);
+            card.appendChild(explanationText);
+            grid.appendChild(card);
+        });
+
+        // Creates the new practice questions
+        practiceData.forEach((item, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'bg-gray-800 rounded-lg p-4 mb-4';
+
+            const questionText = document.createElement('p');
+            questionText.className = 'text-gray-300 font-medium mb-2';
+            questionText.textContent = `${index + 1}. ${item.portuguese}`;
+
+            const inputContainer = document.createElement('div');
+            inputContainer.className = 'flex flex-col md:flex-row gap-2';
+
+            const answerInput = document.createElement('input');
+            answerInput.type = 'text';
+            answerInput.className = 'flex-grow p-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-bk-orange';
+            answerInput.placeholder = 'Digite a tradução para o inglês...';
+
+            const checkButton = document.createElement('button');
+            checkButton.className = 'bg-mc-red text-white py-2 px-4 rounded-lg font-bold hover:bg-red-700 transition-colors';
+            checkButton.textContent = 'Verificar';
+
+            const feedbackDiv = document.createElement('div');
+            feedbackDiv.className = 'mt-2 text-sm font-semibold';
+
+            checkButton.onclick = () => checkAnswer(answerInput.value, item.english, feedbackDiv);
+
+            inputContainer.appendChild(answerInput);
+            inputContainer.appendChild(checkButton);
+
+            questionDiv.appendChild(questionText);
+            questionDiv.appendChild(inputContainer);
+            questionDiv.appendChild(feedbackDiv);
+
+            practiceContainer.appendChild(questionDiv);
+        });
+
+        function checkAnswer(userAnswer, correctAnswer, feedbackElement) {
+            // Normalize and clean the answers for comparison
+            const normalizedUserAnswer = userAnswer.toLowerCase().trim().replace(/['".,?!]/g, "");
+            const normalizedCorrectAnswer = correctAnswer.toLowerCase().trim().replace(/['".,?!]/g, "");
+
+            if (normalizedUserAnswer === normalizedCorrectAnswer) {
+                feedbackElement.innerHTML = `<span class="text-green-400">✅ Correto!</span>`;
+            } else {
+                feedbackElement.innerHTML = `<span class="text-red-400">❌ Incorreto. A resposta correta é: </span> <span class="text-white font-normal">'${correctAnswer}'</span>`;
+            }
+        }
+
+        // Initialize the page with the first question
+        window.onload = function() {
+            // The practice questions are generated directly, no need for an initial function call here.
+        }
+
+    </script>
+</body>
+</html>
